@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:modelo="clr-namespace:Sueldo5834249"
+             x:Class="Sueldo5834249.MainPage">
+
+    <ContentPage.BindingContext>
+        <modelo:SueldoModelo/>
+    </ContentPage.BindingContext>
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Algoritmo que calcula un aumento al sueldo del trabajador" HorizontalTextAlignment="Center"/>
+            
+            <Entry Text="{Binding Sueldo}" Placeholder="Digite el sueldo del trabajador"/>
+
+            <Label Text="{Binding Aumento}"/>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding ActualizarDatosCommand}"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
